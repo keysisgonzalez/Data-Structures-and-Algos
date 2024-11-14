@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Fibonacci Sequence</title>
+  </head>
+  <body>
+    <script>
+      //The Fibonacci sequence is a series of numbers in which each number (Fibonacci number) is the sum of the two preceding ones,
+      //usually starting with 0 and 1. The sequence goes: 0, 1, 1, 2, 3, 5, 8, 13, 21, and so on.
+
+      //Write a function fibonacci(n) that takes an integer n as an argument and returns the n-th Fibonacci number.
+
+      // Example:
+      // console.log(fibonacci(0)); // Output: 0
+      // console.log(fibonacci(1)); // Output: 1
+      // console.log(fibonacci(5)); // Output: 5
+      // console.log(fibonacci(10)); // Output: 55
+
+      const fibonacci = (n) => {
+        // Initialize i to 2 since the first two Fibonacci numbers (0 and 1) are already in the sequence
+        let i = 2;
+
+        // Initialize sequence array with the first two Fibonacci numbers
+        let sequence = [0, 1];
+
+        // Loop until i reaches n
+        while (i <= n) {
+          // Calculate the next Fibonacci number and store it in the sequence array
+          sequence[i] = sequence[i - 1] + sequence[i - 2];
+          i++;
+        }
+        // Return the first n Fibonacci numbers as an array
+        return sequence.slice(0, n);
+      };
+      console.log("Mama mia! Is a sequence: ", fibonacci(10));
+    </script>
+  </body>
+</html>
