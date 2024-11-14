@@ -5,40 +5,40 @@
   </head>
   <body>
     <script>
-      // Given 2 arrays, create a function that let's a user know (true/false)
-      //whether these two arrays contain any common items
-      //For Example:
-      //const array1 = ['a', 'b', 'c', 'x'];
-      //const array2 = ['z', 'y', 'i'];
-      //should return false.
-      //-----------
-      //const array1 = ['a', 'b', 'c', 'x'];
-      //const array2 = ['z', 'y', 'x'];
-      //should return true.
+      /*Given 2 arrays, create a function that let's a user know (true/false)
+      whether these two arrays contain any common items
+      For Example:
+      const array1 = ['a', 'b', 'c', 'x'];
+      const array2 = ['z', 'y', 'i'];
+      should return false.
+      -----------
+      const array1 = ['a', 'b', 'c', 'x'];
+      const array2 = ['z', 'y', 'x'];
+      should return true.
 
-      // 2 parameters - arrays - no size limit
-      // return true or false
+      2 parameters - arrays - no size limit
+      return true or false
 
-      //comparar dos arrays
-      //solution: a loop within another loop (not the best solution because its O^2)
+      compare two arrays
+      solution: a loop within another loop (not the best solution because its O^2)*/
 
       const array1 = ["a", "b", "c", "x"];
       const array2 = ["z", "y", "a"];
 
       //------first way------
-      // function containsCommonItem2(arr1, arr2) {
-      //   for (let i = 0; i < arr1.length; i++) {
-      //     for (let j = 0; j < arr2.length; j++) {
-      //       if (arr1[i] === arr2[j]) {
-      //         return true;
-      //       }
-      //     }
-      //   }
-      //   return false;
-      // }
-      // //O(a*b) it is not o(n^2) because the arrays doesn't have the same length
+      function containsCommonItem2(arr1, arr2) {
+        for (let i = 0; i < arr1.length; i++) {
+          for (let j = 0; j < arr2.length; j++) {
+            if (arr1[i] === arr2[j]) {
+              return true;
+            }
+          }
+        }
+        return false;
+      }
+      //O(a*b) it is not o(n^2) because the arrays doesn't have the same length
 
-      // console.log(containsCommonItem2(array1, array2));
+      console.log(containsCommonItem2(array1, array2));
 
       //------second way------
 
@@ -50,27 +50,27 @@
       //}
       //array2[index] === obj.properties
 
-      // function FindCommonItems(arr1, arr2) {
-      //   //first, I want you to loop through first array and create object
-      //   //where properties === items in the array
-      //   let map = {};
-      //   for (let i = 0; i < arr1.length; i++) {
-      //     if (!map[array1[i]]) {
-      //       const item = arr1[i];
-      //       map[item] = true;
-      //     }
-      //   }
-      //   // console.log(map);
+      /* function FindCommonItems(arr1, arr2) {
+        //first, I want you to loop through first array and create object
+        //where properties === items in the array
+        let map = {};
+        for (let i = 0; i < arr1.length; i++) {
+          if (!map[array1[i]]) {
+            const item = arr1[i];
+            map[item] = true;
+          }
+        }
+        // console.log(map);
 
-      //   //second, loop through second array and check if item
-      //   //in second array exists on created object
-      //   for (let j = 0; j < arr2.length; j++) {
-      //     if (map[array2[j]]) {
-      //       return true;
-      //     }
-      //   }
-      //   return false;
-      // }
+        //second, loop through second array and check if item
+        //in second array exists on created object
+        for (let j = 0; j < arr2.length; j++) {
+          if (map[array2[j]]) {
+            return true;
+          }
+        }
+        return false;
+      }*/
       //O(a+b) Time Complexity
       //O(a) Space Complexity
 
