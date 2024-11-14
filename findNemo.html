@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Finding Nemo - Testing Scalability</title>
+  </head>
+  <body>
+    <script>
+      //   const fish = ["dory", "bruce", "marlin", "nemo"];
+      const nemo = ["nemo"];
+
+      // Define an array containing several fish names including "nemo"
+      const everyone = [
+        "dory",
+        "bruce",
+        "marlin",
+        "nemo",
+        "gill",
+        "bloat",
+        "nigel",
+        "squirt",
+        "darla",
+        "hank",
+      ];
+      const large = new Array(10).fill("nemo"); //testing scalability with a larger array
+
+      // Define a function named findNemo2 which takes an array as parameter
+      function findNemo(array) {
+        // Record the start time before the loop using performance.now()
+        let t0 = performance.now();
+        // Loop through each element of the array
+        for (let i = 0; i < array.length; i++) {
+          console.log(array[i]);
+          // Check if the current element is equal to "nemo"
+          if (array[i] === "nemo") {
+            // If "nemo" is found, print "Found Nemo!"
+            console.log("Found Nemo!");
+            break;
+          }
+        }
+        // Record the end time after the loop using performance.now()
+        let t1 = performance.now();
+
+        // console.log("Finding Nemo took " + (t1 - t0) + " milliseconds.");
+      }
+
+      findNemo(everyone);
+    </script>
+  </body>
+</html>

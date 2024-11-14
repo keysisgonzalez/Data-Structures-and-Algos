@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>FizzBuzz</title>
+  </head>
+  <body>
+    <script>
+      //FizzBuzz
+      // Print integers one-to-N, but print
+      // "Fizz" if an integer is divisible by three,
+      // "Buzz" if an integer is divisible by five, and
+      // "FizzBuzz" if an integer is divisible by both three and five.
+
+      function fizzBuzz(n) {
+        // Loop through numbers from 1 to n
+        for (let i = 1; i <= n; i++) {
+          // Check if the current number is divisible by both 3 and 5
+          if (i % 3 === 0 && i % 5 === 0) {
+            console.log("FizzBuzz");
+            // Check if the current number is divisible by 3 but not by 5
+          } else if (i % 3 === 0) {
+            console.log("Fizz");
+            // Check if the current number is divisible by 5 but not by 3
+          } else if (i % 5 === 0) {
+            console.log("Buzz");
+          } else {
+            // If the current number is not divisible by either 3 or 5 print the current number
+            console.log(i);
+          }
+        }
+      }
+
+      fizzBuzz(15);
+    </script>
+  </body>
+</html>
