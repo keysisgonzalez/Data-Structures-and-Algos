@@ -1,0 +1,85 @@
+<!-- Write a function which accepts two arrays. It should return true
+      if every value in the array has its corresponding value squared
+      in the second array. The frequency of values must be the same.
+      Input: two arrays
+      Output: true or false
+      Variables: Solution 1: correctIndex
+                 Solution 2: frequencyCounter1, frequencyCounter2
+      Edge cases: arrays with different length-->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Frequency Counter Pattern - Same Frequency</title>
+  </head>
+  <body>
+    <script>
+      //-------Solution 1 - Not best approach--------
+      //O(n^2) because indexOf is a loop, so it is a loop inside a loop
+
+      function same(arr1, arr2) {
+        if (arr1.length !== arr2.length) {
+          return false;
+        }
+        for (let i = 0; i < arr1.length; i++) {
+          let correctIndex = arr2.indexOf(arr1[i] ** 2);
+          if (correctIndex === -1) {
+            return false;
+          }
+          arr2.splice(correctIndex, 1);
+        }
+        return true;
+      }
+
+      let arr1 = [1, 2, 3, 2];
+      let arr2 = [9, 1, 4, 4];
+      //   console.log(same(arr1, arr2));
+
+      //--------Solution 2 - better approach---------
+      //Refactored O(n) - two separate loops
+
+      function same2(arr1, arr2) {
+        // Check if the lengths of arr1 and arr2 are not equal
+        if (arr1.length !== arr2.length) {
+          return false;
+        }
+        // Initialize frequency counters for arr1 and arr2
+        let frequencyCounter1 = {};
+        let frequencyCounter2 = {};
+        // Count the frequency of each element in arr1
+        //val corresponds to each element in the array
+        for (let val of arr1) {
+          frequencyCounter1[val] = (frequencyCounter1[val] || 0) + 1;
+        }
+        // Count the frequency of each element in arr2
+        for (let val of arr2) {
+          frequencyCounter2[val] = (frequencyCounter2[val] || 0) + 1;
+        }
+
+        console.log(frequencyCounter1);
+        console.log(frequencyCounter2);
+        // Compare the squared keys of frequencyCounter1 with frequencyCounter2
+        for (let key in frequencyCounter1) {
+          // If the square of the key in frequencyCounter1 does not exist in frequencyCounter2, return false
+          if (!(key ** 2 in frequencyCounter2)) {
+            return false;
+          }
+          //If the frequencies of the squared key in frequencyCounter2 and the key in frequencyCounter1 are not equal, return false
+          //frequencyCounter2[key ** 2] looks for the value of key squared in the second object
+          //!== means "not equal to"
+          //frequencyCounter1[key] looks for the value of key in the first object
+          if (frequencyCounter2[key ** 2] !== frequencyCounter1[key]) {
+            return false;
+          }
+        }
+        // If all checks pass, return true (arrays are similar based on the specified condition)
+        return true;
+      }
+
+      let array3 = [1, 2, 3, 2];
+      let array4 = [9, 1, 4, 4];
+
+      console.log(same2(array3, array4));
+    </script>
+  </body>
+</html>
