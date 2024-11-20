@@ -29,29 +29,30 @@ Only one valid answer exists. -->
   </head>
   <body>
     <script>
-      // Input: array, integer
-      // Output: new array
-      // Variables: newArray
-      // Edge Cases:
-      // Approach:
-      //create a var to store newArray
-      //iterate through the elements of nums(i), sum each combination of two nums(i) in the array
-      //if two nums(i) added are equal to target
-      //add the nums[i] (index) to the newArray
-      //return newArray
-      // var twoSum = function(nums, target) {
-      //     var newArray = [];
+      /*Input: array, integer
+      Output: new array
+      Variables: newArray
+      Edge Cases:
+      Approach:
+      -create a var to store newArray
+      -iterate through the elements of nums(i), sum each combination of two nums(i) in the array
+      -if two nums(i) added are equal to target
+      -add the nums[i] (index) to the newArray
+      -return newArray
 
-      //     for(let i = 0; i < nums.length; i++){
-      //         for(let j = i + 1; j < nums.length; j++){
-      //             if( nums[i] + nums[j] === target){
-      //                 newArray.push(i);
-      //                 newArray.push(j);
-      //             }
-      //         }
-      //     }
-      //     return newArray;
-      // };
+      var twoSum = function(nums, target) {
+          var newArray = [];
+
+          for(let i = 0; i < nums.length; i++){
+              for(let j = i + 1; j < nums.length; j++){
+                  if( nums[i] + nums[j] === target){
+                      newArray.push(i);
+                      newArray.push(j);
+                  }
+              }
+          }
+          return newArray;
+      };*/
 
       //------Solution 2--------
       var twoSum = function (nums, target) {
