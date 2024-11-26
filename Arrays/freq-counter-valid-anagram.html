@@ -1,0 +1,65 @@
+<!-- Given two strings, write a function to determine if the second string is an anagram of the first. 
+      An anagram is a word, phrase, or name formed by rearranging the letters of another, such as cinema, formed from iceman.
+      Examples:
+      validAnagram('', '') // true
+      validAnagram('aaz', 'zza') // false
+      validAnagram('anagram', 'nagaram') // true
+      validAnagram("rat","car") // false) // false
+      validAnagram('awesome', 'awesom') // false
+      validAnagram('amanaplanacanalpanama', 'acanalmanplanpamana') // false
+      validAnagram('qwerty', 'qeywrt') // true
+      validAnagram('texttwisttime', 'timetwisttext') // true -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Frequency Counter - Valid Anagram</title>
+  </head>
+  <body>
+    <script>
+      /*Input: str1, str2
+    Output: true or false
+    Variables: 
+    Edge Cases: str with different length
+    Approach: 
+    -iterate through str1 and count the chars 
+    -if the char is counted for the first time, char === 1, if the char already exists char + 1
+    -        
+    */
+
+      function validAnagram(str1, str2) {
+        if (str1.length !== str2.length) {
+          return false;
+        }
+
+        let strCounter1 = {};
+        let strCounter2 = {};
+
+        //using for...of
+        // for (let val of str1) {
+        //   strCounter1[val] = (strCounter1[val] || 0) + 1;
+        // }
+
+        for (let i = 0; i < str1.length; i++) {
+          const val = str1[i];
+          strCounter1[val] = (strCounter1[val] || 0) + 1;
+        }
+
+        for (let i = 0; i < str2.length; i++) {
+          const val = str2[i];
+          strCounter2[val] = (strCounter2[val] || 0) + 1;
+        }
+
+        //using for...of
+        // for (let val of str2) {
+        //   strCounter2[val] = (strCounter2[val] || 0) + 1;
+        // }
+
+        console.log(strCounter1);
+        console.log(strCounter2);
+      }
+
+      validAnagram("aaz", "zza"); // false
+    </script>
+  </body>
+</html>
