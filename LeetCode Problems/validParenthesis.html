@@ -46,6 +46,7 @@ s consists of parentheses only '()[]{}'. -->
         let newArray = [];
         const validParens = "() {} []";
         let i = 0;
+        //creating the array
         while (i < s.length) {
           newArray.push(s[i]);
           i++;
@@ -64,32 +65,6 @@ s consists of parentheses only '()[]{}'. -->
       };
 
       console.log(isValidParens("()[]{}"));
-
-      //----------------------------------------------------
-      var isValid = function (s) {
-        const arrayChar = [];
-        const validParens = "{} () []";
-        let i = 0;
-        //the part below is just creating the array
-        while (i < s.length) {
-          arrayChar.push(s[i]);
-          i++;
-
-          let x = arrayChar[arrayChar.length - 2];
-          let y = arrayChar[arrayChar.length - 1];
-
-          let combo = x + y;
-
-          if (validParens.includes(combo)) {
-            arrayChar.pop();
-            arrayChar.pop();
-          }
-        }
-
-        return arrayChar.length === 0;
-      };
-
-      // console.log(isValid("()[]{]"));
     </script>
   </body>
 </html>
